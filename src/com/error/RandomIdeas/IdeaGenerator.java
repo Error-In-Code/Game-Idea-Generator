@@ -1,3 +1,5 @@
+package com.error.RandomIdeas;
+
 import java.util.Random;
 
 public class IdeaGenerator {
@@ -7,10 +9,11 @@ public class IdeaGenerator {
             "A _GENRE_ where you play as _CHARACTER_ and have to defeat _ENEMY_",
             "A _GENRE_ where you play as _CHARACTER_ and must destroy all _OBJECT_s",
             "A _GENRE_ where you are _CHARACTER_ and are attached to a _OBJECT_",
-            "A _GENRE_ in which you are hunting _CREATURE_s"};
+            "A _GENRE_ in which you are hunting _CREATURE_s",
+            "A _GENRE_ in which you are the last _CREATURE_ and must save your species by defeating _ENEMY_"};
 
     private static String[] genre = {"metroidvania", "platformer", "real-time strategy game", "life sim", "farming sim",
-            "hunting sim", "traditional RPG", "horror game", "puzzle game", "roguelike", "beat-em-up"};
+            "traditional RPG", "horror game", "puzzle game", "roguelike", "beat-em-up"};
 
     private static String[] characters =  {"a ghost", "yourself but impossibly old", "a giant spider", "a mad scientist",
             "a young child", "an exterminator", "a police officer", "the universe itself", "an omnipotent being", "the richest man in the universe"};
@@ -19,7 +22,7 @@ public class IdeaGenerator {
 
     private static String[] enemies = {"a huge turtle", "your own subconscious", "your brother", "a demon that was summoned by you", "a sentient bowling ball", "a clone of yourself", "the laws of physics"};
 
-    private static String[] creatures =  {"spider", "flying horse", "living computer", "bee", "famous person"};
+    private static String[] creatures =  {"spider", "flying horse", "living computer", "bee"};
 
     public static String generateIdea(){
         String idea = replaceTags(sentenceStart[random.nextInt(sentenceStart.length)]);

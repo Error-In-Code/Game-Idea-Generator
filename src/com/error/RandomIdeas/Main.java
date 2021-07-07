@@ -1,5 +1,6 @@
+package com.error.RandomIdeas;
+
 import java.util.Random;
-import java.util.stream.IntStream;
 
 public class Main {
     private Random random = new Random();

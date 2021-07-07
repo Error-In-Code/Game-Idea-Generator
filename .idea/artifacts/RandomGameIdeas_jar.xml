@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RandomGameIdeas:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RandomGameIdeas_jar</output-path>
+    <root id="archive" name="RandomGameIdeas.jar">
+      <element id="module-output" name="RandomGameIdeas" />
+    </root>
+  </artifact>
+</component>
