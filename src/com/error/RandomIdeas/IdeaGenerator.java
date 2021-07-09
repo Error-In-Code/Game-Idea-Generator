@@ -12,17 +12,22 @@ public class IdeaGenerator {
             "A _GENRE_ in which you are hunting _CREATURE_s",
             "A _GENRE_ in which you are the last _CREATURE_ and must save your species by defeating _ENEMY_"};
 
-    private static String[] genre = {"metroidvania", "platformer", "real-time strategy game", "life sim", "farming sim",
-            "traditional RPG", "horror game", "puzzle game", "roguelike", "beat-em-up"};
-
-    private static String[] characters =  {"a ghost", "yourself but impossibly old", "a giant spider", "a mad scientist",
-            "a young child", "an exterminator", "a police officer", "the universe itself", "an omnipotent being", "the richest man in the universe"};
-
-    private static String[] objects = {"chair", "planet", "life-form", "house", "rock", "cloud"};
-
-    private static String[] enemies = {"a huge turtle", "your own subconscious", "your brother", "a demon that was summoned by you", "a sentient bowling ball", "a clone of yourself", "the laws of physics"};
-
-    private static String[] creatures =  {"spider", "flying horse", "living computer", "bee"};
+    private static String[][] ideaComponents = {
+            {"metroidvania", "platformer", "real-time strategy game", "life sim", "farming sim",
+                    "traditional RPG", "horror game", "puzzle game", "roguelike", "beat-em-up",
+                    "_GENRE_"},
+            {"a ghost", "yourself but impossibly old", "a giant spider", "a mad scientist", "a young child",
+                    "an exterminator", "a police officer", "the universe itself", "an omnipotent being",
+                    "the richest man in the universe",
+                    "_CHARACTER_"},
+            {"chair", "planet", "life-form", "house", "rock", "cloud",
+                    "_OBJECT_"},
+            {"a huge turtle", "your own subconscious", "your brother", "a demon that was summoned by you",
+                    "a sentient bowling ball", "a clone of yourself", "the laws of physics",
+                    "_ENEMY_"},
+            {"spider", "flying horse", "living computer", "bee",
+            "_CREATURE_"}
+    };
 
     public static String generateIdea(){
         String idea = replaceTags(sentenceStart[random.nextInt(sentenceStart.length)]);
@@ -31,11 +36,9 @@ public class IdeaGenerator {
 
     private static String replaceTags(String prompt){
         String result = prompt;
-        result = result.replace("_GENRE_", genre[random.nextInt(genre.length)]);
-        result = result.replace("_CHARACTER_", characters[random.nextInt(characters.length)]);
-        result = result.replace("_OBJECT_", objects[random.nextInt(objects.length)]);
-        result = result.replace("_ENEMY_", enemies[random.nextInt(enemies.length)]);
-        result = result.replace("_CREATURE_", creatures[random.nextInt(creatures.length)]);
+        for(int i = 0; i < ideaComponents.length; i++){
+            result = result.replace(ideaComponents[i][ideaComponents[i].length - 1], ideaComponents[i][random.nextInt(ideaComponents[i].length - 1)]);
+        }
         return result;
     }
 }
